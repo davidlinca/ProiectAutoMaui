@@ -4,17 +4,36 @@
              x:Class="ProiectAutoMaui.AppointmentPage"
              Title="Appointments">
     <VerticalStackLayout Padding="10">
-        <ListView x:Name="AppointmentListView" 
-                  ItemSelected="OnAppointmentSelected"
-                  Margin="10">
+
+        <Label Text="Your Appointments"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <ListView x:Name="AppointmentListView"
+                  ItemsSource="{Binding Appointments}"
+                  SelectionMode="Single"
+                  ItemSelected="OnAppointmentSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Date}" />
+                    <ViewCell>
+                        <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                            <VerticalStackLayout>
+                                <Label Text="Date:" FontSize="14" />
+                                <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy HH:mm}'}" FontSize="16" />
+
+                                <Label Text="Car ID:" FontSize="14" />
+                                <Label Text="{Binding CarId}" FontSize="16" />
+
+                                <Label Text="Service ID:" FontSize="14" />
+                                <Label Text="{Binding ServiceId}" FontSize="16" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Add New Appointment"
-                Clicked="OnAddAppointmentClicked"
-                Margin="10"/>
+
+        <Button Text="Add New Appointment" Clicked="OnAddAppointmentClicked"
+                HorizontalOptions="Center" VerticalOptions="End" />
     </VerticalStackLayout>
 </ContentPage>

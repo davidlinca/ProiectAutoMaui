@@ -1,25 +1,29 @@
-﻿namespace ProiectAutoMaui
+﻿namespace ProiectAutoMaui;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        int count = 0;
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        InitializeComponent();
     }
 
+    private async void OnClientsButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ClientPage());
+    }
+
+    private async void OnCarsButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CarPage());
+    }
+
+    private async void OnServicesButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ServicePage());
+    }
+
+    private async void OnAppointmentsButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AppointmentPage());
+    }
 }
