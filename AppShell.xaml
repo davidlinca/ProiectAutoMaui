@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ProiectAutoMaui" 
+       x:Class="ProiectAutoMaui.AppShell">
+    <FlyoutItem Title="Clients" Icon="clients.png">
+        <ShellContent Title="Clients" ContentTemplate="{DataTemplate local:ClientPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Cars" Icon="cars.png">
+        <ShellContent Title="Cars" ContentTemplate="{DataTemplate local:CarPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Services" Icon="services.png">
+        <ShellContent Title="Services" ContentTemplate="{DataTemplate local:ServicePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Appointments" Icon="appointments.png">
+        <ShellContent Title="Appointments" ContentTemplate="{DataTemplate local:AppointmentPage}" />
+    </FlyoutItem>
+</Shell>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectAutoMaui.CarPage"
+             Title="Cars">
+    <VerticalStackLayout Padding="10">
+        <ListView x:Name="CarListView" 
+                  ItemSelected="OnCarSelected"
+                  Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Mark}" Detail="{Binding Model}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add New Car"
+                Clicked="OnAddCarClicked"
+                Margin="10"/>
+    </VerticalStackLayout>
+</ContentPage>

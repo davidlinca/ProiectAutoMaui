@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectAutoMaui.CarDetailPage"
+             Title="Car Details">
+    <VerticalStackLayout Padding="10">
+        <Label Text="Car ID" />
+        <Entry x:Name="CarIdEntry" IsReadOnly="True" Text="{Binding CarId}" />
+
+        <Label Text="Mark" />
+        <Entry x:Name="MarkEntry" Text="{Binding Mark}" />
+
+        <Label Text="Model" />
+        <Entry x:Name="ModelEntry" Text="{Binding Model}" />
+
+        <Label Text="Year" />
+        <Entry x:Name="YearEntry" Text="{Binding Year}" Keyboard="Numeric" />
+
+        <Button Text="Save" Clicked="OnSaveClicked" />
+        <Button Text="Delete" Clicked="OnDeleteClicked" />
+    </VerticalStackLayout>
+</ContentPage>
+

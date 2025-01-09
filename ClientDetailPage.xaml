@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectAutoMaui.ClientDetailPage"
+             Title="Client Details">
+    <VerticalStackLayout Padding="10">
+        <Label Text="Client ID:"
+               FontAttributes="Bold" />
+        <Label Text="{Binding ClientId}" />
+        <Entry Placeholder="First Name" 
+               Text="{Binding FirstName}" />
+        <Entry Placeholder="Last Name" 
+               Text="{Binding LastName}" />
+        <Entry Placeholder="Email" 
+               Text="{Binding Email}" />
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+                    Grid.Column="0"
+                    Clicked="OnSaveClicked" />
+            <Button Text="Delete"
+                    Grid.Column="1"
+                    Clicked="OnDeleteClicked" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
